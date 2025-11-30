@@ -32,7 +32,7 @@ let information = [
 ];
 
 let images = [
-  "img/Waleed Farrukh.jpg",
+  "img/Waleed farrukh.jpg",
   "img/Meelad Raza.jpg",
   "img/Kabeer Hussain.jpg",
   "img/Muhammad Hassan.jpg",
