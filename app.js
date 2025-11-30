@@ -6,7 +6,6 @@ let names = [
   "Muzammil Ahmed",
   "Ibad Ahmed",
   "Muhammad Abdullah",
-  
 ];
 
 let skill = [
@@ -17,8 +16,6 @@ let skill = [
   "Trader || MERN Stack Learner",
   "Frontend Developer || MERN Stack Learner",
   "Frontend Developer || MERN Stack Learner",
-  
-  
 ];
 
 let information = [
@@ -28,7 +25,7 @@ let information = [
   "Committed to becoming a skilled full-stack developer.",
   "A trader transitioning into web development with strong discipline.",
   "Highly motivated individual mastering modern web development skills.",
-  "a passionate web and graphic designer who loves creating modern, user-friendly designs that bring ideas to life."
+  "A passionate web and graphic designer who loves creating modern, user-friendly designs that bring ideas to life."
 ];
 
 let images = [
@@ -39,10 +36,33 @@ let images = [
   "img/Muzammil Ahmed.jpg",
   "img/Ibad Ahmed.jpg",
   "img/Muhammad Abdullah.jpg",
-  
 ];
 
 let index = 0;
+
+// Store data in localStorage
+function saveDataToLocalStorage() {
+  localStorage.setItem('names', JSON.stringify(names));
+  localStorage.setItem('skills', JSON.stringify(skill));
+  localStorage.setItem('information', JSON.stringify(information));
+  localStorage.setItem('images', JSON.stringify(images));
+}
+
+// Retrieve data from localStorage
+function loadDataFromLocalStorage() {
+  const storedNames = localStorage.getItem('names');
+  const storedSkills = localStorage.getItem('skills');
+  const storedInformation = localStorage.getItem('information');
+  const storedImages = localStorage.getItem('images');
+
+  if (storedNames) names = JSON.parse(storedNames);
+  if (storedSkills) skill = JSON.parse(storedSkills);
+  if (storedInformation) information = JSON.parse(storedInformation);
+  if (storedImages) images = JSON.parse(storedImages);
+}
+
+loadDataFromLocalStorage(); // Load data from localStorage when the page is loaded
+saveDataToLocalStorage();  // Save data to localStorage initially
 
 const btnNext = document.querySelector("#left");
 const btnPrev = document.querySelector("#right");
